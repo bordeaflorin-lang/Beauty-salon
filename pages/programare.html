@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programare — Aura Beauty Studio</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="navbar-logo">
+    <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="22" cy="22" rx="22" ry="22" fill="#111111" stroke="#c9a84c" stroke-width="1"/>
+      <g transform="translate(10,10) scale(0.56)">
+        <path d="M 6 6 L 24 24 M 6 6 C 4 4 2 6 4 8 L 10 14" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <path d="M 38 6 L 20 24 M 38 6 C 40 4 42 6 40 8 L 34 14" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <circle cx="8" cy="32" r="6" stroke="#c9a84c" stroke-width="2" fill="none"/>
+        <circle cx="36" cy="32" r="6" stroke="#c9a84c" stroke-width="2" fill="none"/>
+        <path d="M 14 28 L 30 20 M 14 36 L 30 28" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" fill="none"/>
+      </g>
+    </svg>
+    <div class="brand">
+      <a href="../index.html"><span>AURA</span> STUDIO</a>
+      <small>Hair &amp; Beauty Salon</small>
+    </div>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Acasă</a></li>
+    <li><a href="servicii.html">Servicii</a></li>
+    <li><a href="galerie.html">Galerie</a></li>
+    <li><a href="programare.html" class="active">Programare</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="programare.html" class="nav-cta">Programează-te</a></li>
+  </ul>
+
+  <div class="hamburger" id="hamburger" aria-label="Meniu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<section id="programare" style="padding-top: calc(var(--nav-h) + 60px);">
+  <div class="booking-wrapper">
+
+    <!-- Left info -->
+    <div class="booking-info reveal">
+      <div class="section-header">
+        <span class="section-eyebrow">Fă o</span>
+        <h1 class="section-title">Programare <em>Acum</em></h1>
+        <div class="gold-line"></div>
+      </div>
+      <p>
+        Rezervă-ți locul la Aura Beauty Studio și bucură-te de o experiență de înfrumusețare
+        cu adevărat premium. Echipa noastră este pregătită să te întâmpine cu profesionalism și dedicare.
+      </p>
+      <div class="booking-benefits">
+        <div class="benefit-row">Consultanță personalizată înainte de fiecare serviciu</div>
+        <div class="benefit-row">Produse premium de ultimă generație</div>
+        <div class="benefit-row">Specialiști cu experiență internațională</div>
+        <div class="benefit-row">Confirmarea programării prin SMS sau email</div>
+      </div>
+    </div>
+
+    <div class="booking-form reveal">
+      <h3>Programează-te <span>Acum</span></h3>
+
+      <form id="bookingForm" action="#modalOverlay" method="get">
+        <div class="form-group">
+          <label for="nume">Nume Complet</label>
+          <input type="text" id="nume" placeholder="Ion Popescu" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="telefon">Număr de Telefon</label>
+            <input type="tel" id="telefon" placeholder="+373 000 000 000" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="email@exemplu.com" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="serviciu">Serviciu Dorit</label>
+          <select id="serviciu" required>
+            <option value="" disabled selected>Alege un serviciu</option>
+            <option>Frizerie &amp; Tuns Păr Bărbați</option>
+            <option>Frizerie &amp; Coafat Păr Femei</option>
+            <option>Coafuri de Ocazie</option>
+            <option>Vopsire Păr</option>
+            <option>Tratamente Capilare</option>
+            <option>Beard Styling</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="data">Data</label>
+            <input type="date" id="data" required />
+          </div>
+          <div class="form-group">
+            <label for="ora">Ora</label>
+            <input type="time" id="ora" min="09:00" max="19:00" required />
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Trimite Cererea →</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <div class="modal-icon">
+      <svg viewBox="0 0 24 24" stroke-width="2">
+        <polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h3>Cerere Trimisă!</h3>
+    <p>Te-am programat cu succes. Te vom contacta în cel mai scurt timp pentru a confirma.</p>
+    <a href="../index.html" class="modal-close">Multumim. Reveniti la pagina principala</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="brand-name"><span>AURA</span> STUDIO</div>
+      <div class="brand-tag">Hair &amp; Beauty Salon</div>
+      <p>Frumusețe cu rafinament. Servicii de înfrumusețare premium în inima orașului Cahul.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Programare</h4>
+      <ul>
+        <li><a href="programare.html">Rezervă online</a></li>
+        <li><a href="tel:+37300000000">+373 000 000 000</a></li>
+        <li><a href="mailto:info@aurastudio.md">info@aurastudio.md</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Servicii</h4>
+      <ul>
+        <li><a href="servicii.html">Frizerie Bărbați</a></li>
+        <li><a href="servicii.html">Coafat Femei</a></li>
+        <li><a href="servicii.html">Coafuri Ocazie</a></li>
+        <li><a href="servicii.html">Vopsire Păr</a></li>
+        <li><a href="servicii.html">Tratamente</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rețele Sociale</h4>
+      <div class="footer-social">
+        <a href="#" class="social-btn" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-linecap="round" stroke-linejoin="round"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-linecap="round"/></svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" stroke-width="1.5" fill="none"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Aura Beauty Studio. Toate drepturile rezervate.</p>
+    <div class="footer-links">
+      <a href="#">Politica de Confidențialitate</a>
+      <a href="#">Termeni &amp; Condiții</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
