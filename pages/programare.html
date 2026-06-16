@@ -119,28 +119,41 @@
 </form>
 
 <script>
-document.getElementById("bookingForm").addEventListener("submit", async function(e) {
+const form = document.getElementById("bookingForm");
+
+form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const formData = new FormData(this);
+    const submitBtn = form.querySelector("button[type='submit']");
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Se trimite...";
+
+    const data = Object.fromEntries(new FormData(form));
 
     try {
         const response = await fetch(
             "https://api.sheetmonkey.io/form/aMBeLXe2vzUMSJJsKCGG7X",
             {
                 method: "POST",
-                body: formData
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
             }
         );
 
         if (response.ok) {
-            window.location.href = "succes.html";
+            window.location.href = "./succes.html";
         } else {
             alert("Eroare la trimiterea formularului.");
+            submitBtn.disabled = false;
+            submitBtn.innerText = "Trimite Cererea →";
         }
-    } catch (error) {
+    } catch (err) {
+        console.error(err);
         alert("Nu s-a putut trimite formularul.");
-        console.error(error);
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Trimite Cererea →";
     }
 });
 </script>
