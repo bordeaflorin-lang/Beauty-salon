@@ -68,26 +68,28 @@
     <div class="booking-form reveal">
       <h3>Programează-te <span>Acum</span></h3>
 
-      <form id="bookingForm" action="#modalOverlay" method="get">
+      <form id="bookingForm" action="https://api.sheetmonkey.io/form/aMBeLXe2vzUMSJJsKCGG7X" method="post">
+
+  <input type="hidden" name="x-sheetmonkey-redirect" value="https://bordeaflorin-lang.github.io/Beauty-salon/">
         <div class="form-group">
           <label for="nume">Nume Complet</label>
-          <input type="text" id="nume" placeholder="Ion Popescu" required />
+          <input type="text" id="nume" name="nume" placeholder="Ion Popescu" required />
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label for="telefon">Număr de Telefon</label>
-            <input type="tel" id="telefon" placeholder="+373 000 000 000" required />
+            <input type="tel" id="telefon" name="telefon" placeholder="+373 000 000 000" required />
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="email@exemplu.com" />
+            <input type="email" id="email" name="email" placeholder="email@exemplu.com" />
           </div>
         </div>
 
         <div class="form-group">
           <label for="serviciu">Serviciu Dorit</label>
-          <select id="serviciu" required>
+          <select id="serviciu" name="serviciu" required>
             <option value="" disabled selected>Alege un serviciu</option>
             <option>Frizerie &amp; Tuns Păr Bărbați</option>
             <option>Frizerie &amp; Coafat Păr Femei</option>
@@ -101,11 +103,11 @@
         <div class="form-row">
           <div class="form-group">
             <label for="data">Data</label>
-            <input type="date" id="data" required />
+            <input type="date" id="data" name="data" required />
           </div>
           <div class="form-group">
             <label for="ora">Ora</label>
-            <input type="time" id="ora" min="09:00" max="19:00" required />
+            <input type="time" id="ora" name="ora" min="09:00" max="19:00" required />
           </div>
         </div>
 
