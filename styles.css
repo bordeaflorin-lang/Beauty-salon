@@ -503,7 +503,7 @@ section { padding: 90px 48px; }
   background: rgba(0,0,0,0.75); backdrop-filter: blur(4px);
   display: none; align-items: center; justify-content: center;
 }
-.modal-overlay.active { display: flex; }
+.modal-overlay:target { display: flex; }
 .modal-box {
   background: var(--dark2); border: 1px solid var(--border);
   border-radius: var(--radius-lg); padding: 44px 48px;
