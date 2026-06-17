@@ -112,10 +112,23 @@ ul  { list-style: none; }
 /* Hamburger */
 .hamburger {
   display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px;
+  z-index: 1100; position: relative;
 }
 .hamburger span {
   width: 26px; height: 2px; background: var(--gold);
   transition: all var(--transition);
+}
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+body.nav-open {
+  overflow: hidden;
 }
 
 /* Hero Section */

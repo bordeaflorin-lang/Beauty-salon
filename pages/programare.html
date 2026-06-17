@@ -42,6 +42,41 @@
       <span></span><span></span><span></span>
     </div>
   </nav>
+  <script>
+  (function () {
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+    if (!hamburger || !navLinks) return;
+
+    function closeMenu() {
+      navLinks.classList.remove("open");
+      hamburger.classList.remove("open");
+      document.body.classList.remove("nav-open");
+    }
+
+    function toggleMenu() {
+      const isOpen = navLinks.classList.toggle("open");
+      hamburger.classList.toggle("open", isOpen);
+      document.body.classList.toggle("nav-open", isOpen);
+    }
+
+    hamburger.addEventListener("click", toggleMenu);
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!navLinks.classList.contains("open")) return;
+      if (navLinks.contains(e.target) || hamburger.contains(e.target)) return;
+      closeMenu();
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) closeMenu();
+    });
+  })();
+</script>
 
   <section id="programare" style="padding-top: calc(var(--nav-h) + 60px);">
     <div class="booking-wrapper">
